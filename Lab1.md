@@ -1,11 +1,11 @@
 1) Добавлены и подключены между собой 3 Spine и 4 Leaf на устройствах Cisco IOL
 2) Устройства объединены (VPC пару нужно настраивать?)
 3) В качестве клиентов добавлены Cisco IOL
-4) Вот тут не понятно, как прописать адреса - создать какой-то svi для управления и клиентов или прописывать адреса на портах?
+4) Адресация L3 на портах, подробнее в лаб. 2.
 
 Ссылка на лабу:
 http://10.120.0.18/legacy/Lab1.unl/topology
 
 Топология:
 
-![Топология](https://lh3.googleusercontent.com/uYjNd0qwsRpd15wPt5gNkswtpXE2f-LwQQ96JvvgoqYzlpyvQIlQ4aJFkQ-FOL84EEnI7GoibiC2_Ii2bETRAxdIHP-uIljnrweFAgW1-TmgDrYAYLbE4T9e4ZRqF5Njju3rvFU5M6-KlrKas1sUQAmbsbg98TtBQbAkJ87XBSZcnF_zYCZ-kC7g1w98_v1Nnlhw01ngn0CNsLUtNl6uAA18jTJO6iUrFBXWCMoS1R0bti-uYAghI9Z8Nc5Sz9fpGMvQWtbFoXvhov7YgDX5b0Tl6wyVtPDY18XnHNX_hblp1Q9nsAmdSc8CMzKte6O9cpihZjJKOjgLhkLL57KIfTX8_lB5RjIQiGphWkAQb6iX3mQDzv5Pn7iJ5JypukenYcG3qI9ax06JOJjHi2DRrO1fi72XUSxC-rbF6I4TkvY7htK0gBhBnUAId1Djh5YRq4PM5fUc4Frv8K1o-WdrQhL3POri4wgKVI-W5xdf32yyTAAvng5cyE0VEjmvs5oHJhMcuZ4eBH5eyF8_ayQGlsFgHLj8foChvznBQGOc3JVHRjipABCHqgoqEvMh_pwn-A_csILp9wqNH44ii_hRH1YwU1j84OrrbmO9y9NucSL_t05Bo_aex1jyHTL27589SjksH8FU0Nu_AZat5NH79NoW3Qhu3fY7Z2uGunextdpC3VGGHPai5PRw-nn_rOCu5Eh-s88IUuMhPdfsE2Uz-6A=w611-h516-no?authuser=0)
+![Топология](https://github.com/llseoll/Data_Center/blob/main/Screenshot_4.jpg)
