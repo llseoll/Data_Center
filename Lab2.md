@@ -459,22 +459,22 @@ router ospf 1
 <details>
 <summary>Client8</summary>
 version 15.4  
-service timestamps debug datetime msec  
+service timestamps debug datetime msec    
 service timestamps log datetime msec  
 no service password-encryption  
 !  
 hostname Router  
 !  
-boot-start-marker  
+boot-start-marker    
 boot-end-marker  
 !  
-no aaa new-model   
+no aaa new-model  
 clock timezone EET 2 0  
 mmi polling-interval 60  
 no mmi auto-configure  
 no mmi pvc  
 mmi snmp-timeout 180  
-! 
+!  
 ip cef  
 no ipv6 cef  
 !  
