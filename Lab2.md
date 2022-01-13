@@ -11,12 +11,6 @@ http://10.120.0.18/legacy/Lab2.unl/topology
 3. Конфигурация устройств:
 <details>
 <summary>Spine1</summary>
-
-
-!Command: show running-config  
-!Running configuration last done at: Sun Nov  7 16:01:40 2021  
-!Time: Sun Nov  7 16:01:41 2021  
-  
 version 9.2(2) Bios:version  
 hostname Spine1  
 vdc Spine1 id 1  
@@ -230,3 +224,66 @@ router ospf 1
 !end  
   
 </details>
+<details>
+<summary>Leaf4</summary>
+version 9.2(2) Bios:version  
+hostname Leaf4  
+vdc Leaf4 id 1  
+  limit-resource vlan minimum 16 maximum 4094  
+  limit-resource vrf minimum 2 maximum 4096  
+  limit-resource port-channel minimum 0 maximum 511  
+  limit-resource u4route-mem minimum 248 maximum 248  
+  limit-resource u6route-mem minimum 96 maximum 96  
+  limit-resource m4route-mem minimum 58 maximum 58  
+  limit-resource m6route-mem minimum 8 maximum 8  
+  
+feature ospf  
+  
+username admin password 5 $5$sjAvtSPP$jk1JDECbMMe0uBpXHAMLET.ILJAn8DlwNUkfeAn0HIB  role network-admin  
+ip domain-lookup  
+ip access-list 101  
+  10 permit ip 192.168.0.0 0.0.255.255 any   
+snmp-server user admin network-admin auth md5 0xdee84800e26c74a8527a5d3c994f7b75 priv 0xdee84800e26c74a8527a5d3c994f7b75 localizedkey  
+rmon event 1 description FATAL(1) owner PMON@FATAL  
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL  
+rmon event 3 description ERROR(3) owner PMON@ERROR  
+rmon event 4 description WARNING(4) owner PMON@WARNING  
+rmon event 5 description INFORMATION(5) owner PMON@INFO  
+  
+vlan 1  
+  
+route-map ospf permit 10  
+  match ip address 101   
+vrf context management  
+  
+  
+interface Ethernet1/1  
+  no switchport  
+  ip address 192.168.1.2/30  
+  ip ospf authentication-key 3 c15a77a8059d3296  
+  ip ospf network point-to-point  
+  no shutdown  
+  
+interface Ethernet1/2  
+  no switchport  
+  ip address 192.168.2.2/30  
+  ip ospf authentication-key 3 c15a77a8059d3296  
+  ip ospf network point-to-point  
+  no shutdown  
+  
+interface mgmt0  
+  vrf member management  
+line console  
+line vty  
+boot nxos bootflash:/nxos.9.2.2.bin   
+router ospf 1  
+  router-id 192.168.50.1  
+  network 192.168.1.0/30 area 0.0.0.0  
+  network 192.168.2.0/30 area 0.0.0.0  
+  redistribute direct route-map ospf  
+  
+!end  
+   
+</details>
+
+
