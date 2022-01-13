@@ -11,6 +11,7 @@ http://10.120.0.18/legacy/Lab2.unl/topology
 3. Конфигурация устройств:
 <details>
 <summary>Spine1</summary>
+  
 version 9.2(2) Bios:version  
 hostname Spine1  
 vdc Spine1 id 1  
@@ -89,6 +90,7 @@ router ospf 1
   
 <details>
 <summary>Spine2</summary>
+  
 version 9.2(2) Bios:version    
 hostname Spine2  
 vdc Spine2 id 1  
@@ -165,6 +167,7 @@ router ospf 1
 </details>
 <details>
 <summary>Spine3</summary>
+  
 version 9.2(2) Bios:version  
 hostname Spine3  
 vdc Spine3 id 1  
@@ -226,6 +229,7 @@ router ospf 1
 </details>
 <details>
 <summary>Leaf4</summary>
+  
 version 9.2(2) Bios:version  
 hostname Leaf4  
 vdc Leaf4 id 1  
@@ -287,6 +291,7 @@ router ospf 1
 
 <details>
 <summary>Leaf5</summary>
+  
 version 9.2(2) Bios:version  
 hostname Leaf5  
 vdc Leaf5 id 1  
@@ -339,9 +344,9 @@ router ospf 1
   
 !end
 </details>
-  
 <details>
 <summary>Leaf6</summary> 
+  
 version 9.2(2) Bios:version   
 hostname Leaf6  
 vdc Leaf6 id 1  
@@ -402,6 +407,7 @@ router ospf 1
 </details>
 <details>
 <summary>Leaf7</summary>
+  
 version 9.2(2) Bios:version    
 hostname Leaf7  
 vdc Leaf7 id 1  
