@@ -283,7 +283,6 @@ router ospf 1
   redistribute direct route-map ospf  
   
 !end  
-   
 </details>
 
 <details>
@@ -340,6 +339,7 @@ router ospf 1
   
 !end
 </details>
+  
 <details>
 <summary>Leaf6</summary> 
 version 9.2(2) Bios:version   
