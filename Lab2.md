@@ -285,5 +285,56 @@ router ospf 1
 !end  
    
 </details>
-
-
+<details>
+<summary>Leaf5/summary>
+version 9.2(2) Bios:version  
+hostname Leaf5  
+vdc Leaf5 id 1  
+  limit-resource vlan minimum 16 maximum 4094  
+  limit-resource vrf minimum 2 maximum 4096  
+  limit-resource port-channel minimum 0 maximum 511  
+  limit-resource u4route-mem minimum 248 maximum 248  
+  limit-resource u6route-mem minimum 96 maximum 96  
+  limit-resource m4route-mem minimum 58 maximum 58  
+  limit-resource m6route-mem minimum 8 maximum 8  
+  
+feature ospf  
+  
+username admin password 5 $5$DvJqh/SW$UWOtfebIfu6OTlVh/TbNjycizxAYc7Dh6cC8pAGtOW/  role network-admin  
+ip domain-lookup  
+snmp-server user admin network-admin auth md5 0x69c68130aaeaa3da8927393df3b7681c priv 0x69c68130aaeaa3da8927393df3b7681c localizedkey  
+rmon event 1 description FATAL(1) owner PMON@FATAL  
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL  
+rmon event 3 description ERROR(3) owner PMON@ERROR  
+rmon event 4 description WARNING(4) owner PMON@WARNING  
+rmon event 5 description INFORMATION(5) owner PMON@INFO  
+  
+vlan 1  
+  
+vrf context management  
+  
+interface Ethernet1/1  
+  no switchport  
+  ip address 192.168.1.6/30  
+  ip ospf authentication-key 3 c15a77a8059d3296  
+  ip ospf network point-to-point  
+  no shutdown  
+   
+interface Ethernet1/2   
+  no switchport  
+  ip address 192.168.2.6/30  
+  ip ospf authentication-key 3 c15a77a8059d3296  
+  ip ospf network point-to-point  
+  no shutdown  
+  
+interface mgmt0  
+  vrf member management  
+line console  
+line vty  
+boot nxos bootflash:/nxos.9.2.2.bin  
+router ospf 1  
+  router-id 192.168.1.6  
+  network 192.168.1.4/30 area 0.0.0.0  
+  network 192.168.2.4/30 area 0.0.0.0  
+  
+!end
