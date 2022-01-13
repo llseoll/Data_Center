@@ -652,7 +652,8 @@ line vty 0 4
 !  
 end  
 </Details>
-'''
+  
+//php code
 Leaf4# sh ip ospf neighbors
  OSPF Process ID 1 VRF default
  Total number of neighbors: 2
@@ -681,4 +682,4 @@ IP Route Table for VRF "default"
 192.168.100.0/24, ubest/mbest: 2/0
     *via 192.168.1.1, Eth1/1, [110/20], 02:50:20, ospf-1, type-2
     *via 192.168.2.1, Eth1/2, [110/20], 02:50:20, ospf-1, type-2
-'''
+//php code
