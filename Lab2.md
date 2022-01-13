@@ -91,5 +91,81 @@ router ospf 1
   
 !end  
   
-
+</details>
+  
+<details>
+<summary>Spine2</summary>
+version 9.2(2) Bios:version    
+hostname Spine2  
+vdc Spine2 id 1  
+  limit-resource vlan minimum 16 maximum 4094  
+  limit-resource vrf minimum 2 maximum 4096  
+  limit-resource port-channel minimum 0 maximum 511  
+  limit-resource u4route-mem minimum 248 maximum 248  
+  limit-resource u6route-mem minimum 96 maximum 96  
+  limit-resource m4route-mem minimum 58 maximum 58  
+  limit-resource m6route-mem minimum 8 maximum 8  
+  
+feature ospf  
+  
+username admin password 5 $5$as3/9Dkn$znzd28Y82AahmueFsE06cn7nbFZ5p4bo8yinANGrt7.  role network-admin  
+ip domain-lookup  
+ip access-list 101  
+  10 permit ip 192.168.0.0 0.0.255.255 any   
+copp profile strict  
+snmp-server user admin network-admin auth md5 0x341fad63897e284856de4c4934caf770 priv 0x341fad63897e284856de4c4934caf770 localizedkey  
+rmon event 1 description FATAL(1) owner PMON@FATAL  
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL  
+rmon event 3 description ERROR(3) owner PMON@ERROR  
+rmon event 4 description WARNING(4) owner PMON@WARNING  
+rmon event 5 description INFORMATION(5) owner PMON@INFO  
+  
+vlan 1  
+  
+route-map ospf permit 10  
+  match ip address 101   
+vrf context management  
+  
+interface Ethernet1/1  
+  no switchport  
+  ip address 192.168.2.1/30  
+  ip ospf authentication-key 3 c15a77a8059d3296  
+  ip ospf network point-to-point  
+  no shutdown  
+  
+interface Ethernet1/2  
+  no switchport  
+  ip address 192.168.2.5/30  
+  ip ospf authentication-key 3 c15a77a8059d3296  
+  ip ospf network point-to-point  
+  no shutdown  
+  
+interface Ethernet1/3  
+  no switchport  
+  ip address 192.168.2.9/30  
+  ip ospf authentication-key 3 c15a77a8059d3296  
+  ip ospf network point-to-point  
+  no shutdown  
+  
+interface Ethernet1/4  
+  no switchport  
+  ip address 192.168.5.2/29  
+  ip ospf authentication-key 3 c15a77a8059d3296  
+  ip ospf network point-to-point  
+  no shutdown  
+  
+interface mgmt0  
+  vrf member management  
+line console  
+line vty  
+boot nxos bootflash:/nxos.9.2.2.bin   
+router ospf 1  
+  router-id 192.168.2.1  
+  network 192.168.2.0/30 area 0.0.0.0  
+  network 192.168.2.4/30 area 0.0.0.0  
+  network 192.168.2.8/30 area 0.0.0.0  
+  network 192.168.5.0/30 area 0.0.0.0  
+  redistribute direct route-map ospf  
+  
+!end  
 </details>
