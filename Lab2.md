@@ -651,4 +651,34 @@ line vty 0 4
  transport input none  
 !  
 end  
-  
+</Details>
+'''
+Leaf4# sh ip ospf neighbors
+ OSPF Process ID 1 VRF default
+ Total number of neighbors: 2
+ Neighbor ID     Pri State            Up Time  Address         Interface
+ 192.168.1.1       1 FULL/ -          02:50:06 192.168.1.1     Eth1/1
+ 192.168.2.1       1 FULL/ -          02:50:15 192.168.2.1     Eth1/2
+Leaf4#
+Leaf4# sh ip route ospf
+IP Route Table for VRF "default"
+'*' denotes best ucast next-hop
+'**' denotes best mcast next-hop
+'[x/y]' denotes [preference/metric]
+'%<string>' in via output denotes VRF <string>
+
+192.168.1.4/30, ubest/mbest: 1/0
+    *via 192.168.1.1, Eth1/1, [110/80], 02:50:20, ospf-1, intra
+192.168.1.8/30, ubest/mbest: 1/0
+    *via 192.168.1.1, Eth1/1, [110/80], 02:50:20, ospf-1, intra
+192.168.2.4/30, ubest/mbest: 1/0
+    *via 192.168.2.1, Eth1/2, [110/80], 02:50:24, ospf-1, intra
+192.168.2.8/30, ubest/mbest: 1/0
+    *via 192.168.2.1, Eth1/2, [110/80], 02:50:24, ospf-1, intra
+192.168.5.0/29, ubest/mbest: 2/0
+    *via 192.168.1.1, Eth1/1, [110/80], 02:50:20, ospf-1, intra
+    *via 192.168.2.1, Eth1/2, [110/80], 02:50:20, ospf-1, intra
+192.168.100.0/24, ubest/mbest: 2/0
+    *via 192.168.1.1, Eth1/1, [110/20], 02:50:20, ospf-1, type-2
+    *via 192.168.2.1, Eth1/2, [110/20], 02:50:20, ospf-1, type-2
+'''
