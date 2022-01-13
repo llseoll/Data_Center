@@ -653,7 +653,8 @@ line vty 0 4
 end  
 </Details>
   
-```html  
+4) Проверка связанности:  
+```  
 Leaf4# sh ip ospf neighbors
  OSPF Process ID 1 VRF default
  Total number of neighbors: 2
