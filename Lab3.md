@@ -293,7 +293,6 @@ System ID       SNPA            Level  State  Hold Time  Interface
 Spine1          N/A             1-2    UP     00:00:25   Ethernet1/1
 Spine2          N/A             1-2    UP     00:00:23   Ethernet1/2
   
-  
 ```
 
-
+![Ping](https://github.com/llseoll/Data_Center/blob/main/Screenshot_4.png)
