@@ -188,6 +188,7 @@ router isis 1
 !end  
   
 </details>
+<details>
 <summary>Leaf6</summary>
   
 version 9.2(2) Bios:version  
@@ -222,6 +223,7 @@ router isis 1
 !end  
   
 </details>
+<details>
 <summary>Leaf7</summary>
   
 version 9.2(2) Bios:version  
