@@ -468,4 +468,6 @@ BGP neighbor is 192.168.2.1, remote AS 64512, ebgp link, Peer index 4
   Foreign host: 192.168.2.1, Foreign port: 179
   fd = 68
 ```
+  ![Ping](https://github.com/llseoll/Data_Center/blob/main/Screenshot_4.jpg)  
+  
   
