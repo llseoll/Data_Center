@@ -295,4 +295,4 @@ Spine2          N/A             1-2    UP     00:00:23   Ethernet1/2
   
 ```
 
-![Ping](https://github.com/llseoll/Data_Center/blob/main/Screenshot_4.png)
+![Ping](https://github.com/llseoll/Data_Center/blob/main/Screenshot_4.jpg)
