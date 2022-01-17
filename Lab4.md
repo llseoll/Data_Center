@@ -138,3 +138,43 @@ router bgp 64512
 !end  
   
 </details>
+<details>
+<summary>Spine3</summary>
+  
+hostname Spine3  
+  
+interface Ethernet1/1  
+  no switchport  
+  ip address 192.168.3.1/30  
+  no shutdown  
+  
+interface Ethernet1/2  
+  no switchport  
+  ip address 192.168.5.3/29  
+  no shutdown  
+  
+router bgp 64512  
+  address-family ipv4 unicast  
+    network 192.168.3.0/30  
+  template peer Leaf7  
+    remote-as 64523  
+    log-neighbor-changes  
+    address-family ipv4 unicast  
+  template peer Spine1  
+    remote-as 64512  
+    log-neighbor-changes  
+    address-family ipv4 unicast  
+  template peer Spine2  
+    remote-as 64512  
+    log-neighbor-changes  
+    address-family ipv4 unicast  
+  neighbor 192.168.3.2  
+    inherit peer Leaf7  
+  neighbor 192.168.5.1  
+    inherit peer Spine1  
+  neighbor 192.168.5.2  
+    inherit peer Spine2  
+  
+!end  
+  
+</details>
