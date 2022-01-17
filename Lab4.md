@@ -178,3 +178,149 @@ router bgp 64512
 !end  
   
 </details>
+<details>
+<summary>Leaf4</summary>
+   
+hostname Leaf4  
+  
+interface Ethernet1/1  
+  no switchport  
+  ip address 192.168.1.2/30  
+  no shutdown  
+  
+interface Ethernet1/2  
+  no switchport  
+  ip address 192.168.2.2/30  
+  no shutdown  
+  
+interface Ethernet1/7  
+  no switchport  
+  ip address 192.168.50.1/24  
+  no shutdown  
+  
+router bgp 64520  
+  router-id 4.4.4.4  
+  address-family ipv4 unicast  
+    network 192.168.50.0/24  
+  template peer Spine1  
+    remote-as 64512  
+    log-neighbor-changes  
+    address-family ipv4 unicast  
+  template peer Spine2  
+    remote-as 64512
+    log-neighbor-changes  
+    address-family ipv4 unicast  
+  neighbor 192.168.1.1  
+    inherit peer Spine1  
+  neighbor 192.168.2.1  
+    inherit peer Spine2  
+  
+!end  
+  
+</details>
+<details>
+<summary>Leaf5</summary>
+  
+hostname Leaf5  
+  
+interface Ethernet1/1  
+  no switchport  
+  ip address 192.168.1.6/30  
+  no shutdown  
+  
+interface Ethernet1/2  
+  no switchport  
+  ip address 192.168.2.6/30  
+  no shutdown  
+  
+router bgp 64521  
+  router-id 5.5.5.5  
+  address-family ipv4 unicast  
+  template peer Spine1  
+    remote-as 64512  
+    log-neighbor-changes  
+    address-family ipv4 unicast  
+  template peer Spine2  
+    remote-as 64512  
+    log-neighbor-changes  
+    address-family ipv4 unicast  
+  neighbor 192.168.1.5  
+    inherit peer Spine1  
+  neighbor 192.168.2.5  
+    inherit peer Spine2  
+  
+!end  
+  
+</details>
+<details>
+<summary>Leaf6</summary>
+  
+hostname Leaf6  
+  
+interface Ethernet1/1  
+  no switchport  
+  ip address 192.168.2.10/30  
+  no shutdown  
+  
+interface Ethernet1/2  
+  no switchport  
+  ip address 192.168.1.10/30  
+  no shutdown  
+  
+interface Ethernet1/7  
+  no switchport  
+  ip address 192.168.100.1/24  
+  no shutdown  
+  
+router bgp 64522  
+  router-id 6.6.6.6  
+  address-family ipv4 unicast  
+    network 192.168.100.0/24  
+  template peer Spine1  
+    remote-as 64512  
+    log-neighbor-changes  
+    address-family ipv4 unicast  
+  template peer Spine2  
+    remote-as 64512  
+    log-neighbor-changes  
+    address-family ipv4 unicast  
+  neighbor 192.168.1.9  
+    inherit peer Spine1  
+  neighbor 192.168.2.9  
+    inherit peer Spine2  
+  
+!end  
+  
+</details>
+<details>
+<summary>Leaf7</summary>
+  
+hostname Leaf7  
+  
+interface Ethernet1/1  
+  no switchport  
+  ip address 192.168.3.2/30  
+  no shutdown  
+  
+interface Ethernet1/7  
+  no switchport  
+  ip address 192.168.150.1/24  
+  no shutdown  
+  
+router bgp 64523  
+  router-id 7.7.7.7  
+  address-family ipv4 unicast  
+    network 192.168.150.0/24  
+  template peer Spine3  
+    remote-as 64512  
+    log-neighbor-changes  
+    address-family ipv4 unicast  
+  neighbor 192.168.3.1  
+    inherit peer Spine3  
+  
+!end  
+  
+</details>  
+
+
+  
