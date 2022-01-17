@@ -1,4 +1,5 @@
 
 1. Схема и адресация остается из прошлых лабораторных работ.
 2. 2. Используется топология из прошлых лабораторных:
-![Топология](https://github.com/llseoll/Data_Center/blob/main/Screenshot_5.jpg)
+![Топология](https://github.com/llseoll/Data_Center/blob/main/Screenshot_6.jpg)
+3. Конфигурация устройств:
